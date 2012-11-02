@@ -66,6 +66,8 @@ def job_function():
             strMailid = orderTransInfos['mailid']
             strCompanytile = orderTransInfos['companytitle']
 
+	    logger.debug("get orderTransInfo from REST success.")
+
             if (strMailid is not None) & (strMailid != "") & (strCompanytile is not None) & (strCompanytile != ""):
                 logger.debug("start callwebservice")
                 returnStatus = deliverySend(strOrderidSearch,strCompanytile,strMailid)

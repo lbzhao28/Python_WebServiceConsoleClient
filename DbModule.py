@@ -26,6 +26,7 @@ def getData4DbSqlite():
 
         if (len(retList)>0):
             return retList
+	    logger.debug("getData4DbSqlite success")
 
     except :
         logger.error("exception occur, see the traceback.log")
@@ -48,6 +49,7 @@ def delData4DbSqlite(inOrderid):
         ret = True
         dbSqlite = DbSqliteConnect()
         ret = dbSqlite.delete('orderHist',where='orderid = $delOrderid',vars={'delOrderid':inOrderid})
+        logger.debug("delData4DbSqlite success")
     except :
         logger.error("exception occur, see the traceback.log")
         #异常写入日志文件.
